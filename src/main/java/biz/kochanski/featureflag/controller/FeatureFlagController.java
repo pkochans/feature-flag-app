@@ -1,6 +1,5 @@
 package biz.kochanski.featureflag.controller;
 
-
 import biz.kochanski.featureflag.dto.FeatureFlagDto;
 import biz.kochanski.featureflag.service.FeatureFlagService;
 import org.springframework.web.bind.annotation.*;
