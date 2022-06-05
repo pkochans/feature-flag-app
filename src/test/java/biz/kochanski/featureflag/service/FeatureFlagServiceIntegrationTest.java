@@ -1,9 +1,8 @@
-package biz.kochanski.featureflag;
+package biz.kochanski.featureflag.service;
 
 import biz.kochanski.featureflag.dto.FeatureFlagDto;
 import biz.kochanski.featureflag.exception.FeatureFlagAlreadyExistsException;
 import biz.kochanski.featureflag.exception.MissingFeatureFlagException;
-import biz.kochanski.featureflag.service.FeatureFlagService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +17,7 @@ import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER
 
 @SpringBootTest
 @DirtiesContext(classMode = AFTER_EACH_TEST_METHOD)
-class FeatureFlagServiceComponentTest {
+class FeatureFlagServiceIntegrationTest {
     private static final String USER_NAME = "user";
     private static final String OTHER_USER_NAME = "nobody";
     private static final String FEATURE_NAME = "feature1";

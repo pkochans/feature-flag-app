@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class BasicAuthConfiguration {
 
     @Bean
-    public UserDetailsService users() {
+    public UserDetailsService userDetailsService() {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
         UserDetails user = users
                 .username("user")
@@ -29,11 +29,12 @@ public class BasicAuthConfiguration {
                 .password("password")
                 .roles("USER", "ADMIN")
                 .build();
-        UserDetails rando = users
+        UserDetails nobody = users
                 .username("nobody")
                 .password("password")
+                .roles()
                 .build();
-        return new InMemoryUserDetailsManager(user, admin, rando);
+        return new InMemoryUserDetailsManager(user, admin, nobody);
     }
 
     @Bean
